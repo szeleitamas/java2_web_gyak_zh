@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        h1, h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<h1>Táblák adatainak megjelenítése:</h1>
+<p th:utext="${str}"></p>
+<div th:insert="footer"></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #menu {
+            border: 1px saddlebrown solid;
+            float: left;
+            width: 100%;
+            padding: 0;
+            margin: 0 0 1em 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            list-style-type: none;
+            background-color: #889bae;
+        }
+        #menu a{
+            float:left;
+            width:8em;
+            text-decoration:none;
+            color:white;
+            background-color:navy;
+            padding:0.2em 0.6em;
+            border-right:1px solid white;
+        }
+        #menu a:hover{
+
+        }
+        h4 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <span sec:authorize="isAnonymous()">
+        <a th:href="@{/login}">Belépés</a>
+        <a th:href="@{/regisztral}">Regisztrál</a>
+        <a th:href="@{/uzenetiras}">Üzenet írás</a>
+        <a th:href="@{/oprendszerek}">RESTful API</a>
+    </span>
+
+    <span sec:authorize="isAuthenticated()">
+        <a th:href="@{/home}">Kezdőlap</a>
+        <a th:href="@{/adatok}">Adatok</a>
+        <a th:href="@{/uzenetiras}">Üzenet írás</a>
+        <a th:href="@{/logout}">Kilépés</a>
+    </span>
+
+    <span sec:authorize="hasRole('ROLE_ADMIN')">
+        <a th:href="@{/admin/uzenetlekeres}">Üzenet lekérés</a>
+         <a th:href="@{/admin/home}">Admin</a>
+
+    </span>
+</div>
+    <div sec:authorize="isAuthenticated()">
+        <h4>Üdvözöljük <span sec:authentication="principal.username"></span></h4>
+    </div>
+
+</div>
+</body>
+</html>

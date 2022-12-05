@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Sikeres bejelentkezés</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<h1 th:utext="'A regisztrációja sikeres. <br/> Azonosítója: ' + ${id}" />
+<div th:insert="footer"></div>
+</body>
+</html>

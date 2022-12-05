@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+  <style>
+    h1{
+      text-align: center;
+    }
+    #szoveg {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<div>
+  <h1>Üdvözöljük weboldalunkon</h1>
+  <div id="szoveg">
+    <h2>Kérem regisztrálja magát, hogy hozzáférjen a műveletekhez!</h2>
+    <br>
+    <h3>Elérhető műveletek:</h3>
+    <ul>
+      <li>Adatok: Adattáblák lekérése</li>
+      <li>Üzenet küldése: Üzenet küldés az Adminnak</li>
+    </ul>
+    <h2>Adminként az küldött üzeneteket is lekérheti!</h2>
+  </div>
+</div>
+<div th:insert="footer"></div>
+</body>
+</html>

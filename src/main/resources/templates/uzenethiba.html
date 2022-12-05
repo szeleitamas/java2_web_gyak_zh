@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Üzenet hiba</title>
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+  <h4>Üzeneted nem lett elküldve!</h4>
+  <p>
+    -A tárgy szövegének 1 és 20 karakter között kell lennie!
+    <br>
+    -A üzeneted szövegének 3 és 1000 karakter között kell lennie!
+  </p>
+  <a href="/uzenetiras">Ismételt küldés!</a>
+<div th:insert="footer"></div>
+</body>
+</html>
